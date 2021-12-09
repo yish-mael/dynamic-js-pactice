@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.css" integrity="sha512-c9N/Xq0n4rQdyCXF4RgrRYAAOSnNJDp8NWILsSUx+33zWyaMbXXvqajgO0UXybRdTGVpxq3FBrcGwabkWsT8OA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <title>Document</title>
+    </head>
+    <body>
+
+        <div class="container mt-5 pt-5">
+
+            <div class="row">
+
+                <div class="col-lg-4"></div>
+
+                <div class="col-lg-4">
+                    
+                    <h1>Dynamic Form</h1>
+
+                    <form action="" method="" onsubmit="return false;">
+
+                        <div class="py-2 d-flex flex-column">
+                            <label for="first-name">
+                                First Name <span class="text-danger">*</span> :
+                            </label>
+                            <input id="first-name" class="border-bottom border-0" name="firstName" placeholder="e.g. John" type="text" required>
+                        </div>
+
+                        <div class="py-2 d-flex flex-column">
+                            <label for="last-name">
+                                Last Name <span class="text-danger">*</span> : 
+                            </label>
+                            <input id="last-name" class="border-bottom border-0" name="lastName" placeholder="e.g. Doe" type="text" required>
+                        </div>
+
+                        <div class="py-2 d-flex flex-column">
+                            <label for="email">
+                                Email <span class="text-danger">*</span> :
+                            </label>
+                            <input id="email" class="border-bottom border-0" name="email" placeholder="e.g. john.doe@gmail.com" type="email" required>
+                        </div>
+
+                        <div class="py-2 d-flex flex-column">
+                            <label for="mobile-no">
+                                Mobile NO:
+                            </label>
+                            <input id="mobile-no" class="border-bottom border-0" name="mobileNo" placeholder="e.g. +234-802-222-2222" type="tel" pattern="[+]{1}[0-9]{3}-[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                            <small>Format +234-802-222-2222</small>
+                        </div>
+
+                        <div class="py-2 d-flex flex-column">
+                            <label for="address">
+                                Address <span class="text-danger">*</span> :
+                            </label>
+                            <input id="address" class="border-bottom border-0" name="address" placeholder="e.g. NO, Street, City, State." type="text" required>
+                        </div>
+
+                        <div class="py-2 d-flex flex-column">
+                            <label for="gender">
+                                Gender
+                            </label>
+
+                            <div class="d-flex justify-content-around">
+                                <label for="male-radio" class="small">Male: &nbsp; <input type="radio" id="male-radio" name="gender" value="male" checked></label> 
+
+                                <label for="female-radio" class="small">Female: &nbsp; <input type="radio" id="female-radio" name="gender" value="female"></label> 
+                            </div>
+                        </div>
+
+                        <div class="py-2 d-flex flex-column">
+                            <label for="initial-value">
+                                Initial Value <span class="text-danger">*</span> :
+                            </label>
+                            <input id="initial-value" class="border-bottom border-0" name="initialValue" type="number" required>
+                        </div>
+
+                        <div class="py-2 d-flex flex-column">
+                            <label for="final-value">
+                                Final Value:
+                            </label>
+                            <input id="final-value" class="border-bottom border-0" name="finalValue" type="number">
+                        </div>
+
+                        <div class="py-2 d-flex flex-column">
+                            <label for="ip-address">
+                                IP Address:
+                            </label>
+                            <input id="ip-address" class="border-bottom border-0" name="ipAddress" type="text" value="192.168.0.1" readonly>
+                        </div>
+
+                        <div class="py-2 d-flex flex-column">
+                            <label for="comment">
+                                Comment:
+                            </label>
+                            <textarea class="border" name="comment" id="comment" cols="30" rows="5"></textarea>
+                        </div>
+                        
+
+                        <button type="submit" id="submit-btn" class="btn btn-success btn-sm" onclick="submitFun();">
+                            Submit
+                        </button>
+
+                        <button type="reset" class="btn btn-warning btn-sm">
+                            reset
+                        </button>
+                
+                        Sum: <b id="sum">0</b>
+                    </form>
+
+                </div>
+
+                <div class="col-lg-4"></div>
+
+            </div>
+
+            
+
+        </div>
+
+    
+
+
+
+        <script>
+            
+            //document.getElementById('first-value')
+            //document.getElementsByClassName('first-val')
+            //document.getElementsByTagName('button')
+
+            //document.querySelector('.first-val')
+            //document.querySelector('#first-value')
+            //document.querySelector('button')
+
+            let submitFun = function(){
+                let initialValue = document.getElementById('initial-value').value;
+                let finalValue = document.getElementById('final-value').value;
+                let sum = Number(initialValue) + Number(finalValue);
+
+                document.getElementById('sum').innerHTML = sum;
+                document.getElementById('submit-btn').innerHTML = "Submitted";
+
+                //alert
+                //alert(sum);
+
+                //confirm
+                //confirm(sum);
+
+                //prompt
+                //prompt("Enter your name:", "John Snow");
+            }
+
+
+
+        </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.min.js" integrity="sha512-OvBgP9A2JBgiRad/mM36mkzXSXaJE9BEIENnVEmeZdITvwT09xnxLtT4twkCa8m/loMbPHsvPl0T8lRGVBwjlQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    </body>
+</html>
